@@ -1,7 +1,7 @@
 version: "3"
 services:
   app:
-    image: gcr.io/junyiacademytest1/k8s-101-flask:justin.v2
+    image: flask-app
     volumes:
       - .:/app
     links:
@@ -11,8 +11,7 @@ services:
     command: python ./app/app.py
 
   db:
-    # image: mysql:5.7
-    image: gcr.io/junyiacademytest1/k8s-101-mysql:justin.v1
+    image: mysql:5.7
     ports:
       - "32000:3306"
     environment:
